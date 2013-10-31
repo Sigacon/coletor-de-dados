@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:sigacon="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_copy"
+        android:orderInCategory="100"
+        sigacon:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="Calendario"/>
+</menu>
