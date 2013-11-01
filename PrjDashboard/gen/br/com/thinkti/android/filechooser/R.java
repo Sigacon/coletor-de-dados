@@ -25,19 +25,19 @@ public final class R {
 		public static final int zip32 = 0x7f02006e;
 	}
 	public static final class id {
-		public static final int TextView01 = 0x7f050043;
-		public static final int TextView02 = 0x7f050044;
-		public static final int img1 = 0x7f050042;
+		public static final int TextView01 = 0x7f060043;
+		public static final int TextView02 = 0x7f060044;
+		public static final int img1 = 0x7f060042;
 	}
 	public static final class layout {
 		public static final int file_view = 0x7f030019;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f0a000e;
-		public static final int currentDir = 0x7f0a0012;
-		public static final int fileSize = 0x7f0a0011;
-		public static final int folder = 0x7f0a000f;
-		public static final int hello = 0x7f0a000d;
-		public static final int parentDirectory = 0x7f0a0010;
+		public static final int app_name = 0x7f050001;
+		public static final int currentDir = 0x7f050005;
+		public static final int fileSize = 0x7f050004;
+		public static final int folder = 0x7f050002;
+		public static final int hello = 0x7f050000;
+		public static final int parentDirectory = 0x7f050003;
 	}
 }
