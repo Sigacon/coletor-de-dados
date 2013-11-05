@@ -12,9 +12,9 @@ public final class R {
 	}
 	public static final class id {
 		public static final int article = 0x7f060042;
-		public static final int article_fragment = 0x7f06004b;
+		public static final int extratolines_fragment = 0x7f06004a;
 		public static final int fragment_container = 0x7f060049;
-		public static final int headlines_fragment = 0x7f06004a;
+		public static final int parcelalines_fragment = 0x7f06004b;
 	}
 	public static final class layout {
 		public static final int article_view = 0x7f030018;

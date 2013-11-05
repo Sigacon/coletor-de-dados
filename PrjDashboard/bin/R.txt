@@ -266,7 +266,6 @@ int id action_mode_close_button 0x7f060022
 int id activity_chooser_view_content 0x7f060023
 int id always 0x7f06000b
 int id article 0x7f060042
-int id article_fragment 0x7f06004b
 int id beginning 0x7f060011
 int id button1 0x7f060048
 int id checkbox 0x7f06002b
@@ -279,9 +278,9 @@ int id edit_query 0x7f060036
 int id end 0x7f060013
 int id expand_activities_button 0x7f060024
 int id expanded_menu 0x7f06002a
+int id extratolines_fragment 0x7f06004a
 int id fileName 0x7f060047
 int id fragment_container 0x7f060049
-int id headlines_fragment 0x7f06004a
 int id home 0x7f060014
 int id homeAsUp 0x7f060005
 int id icon 0x7f060028
@@ -295,6 +294,7 @@ int id middle 0x7f060012
 int id never 0x7f060009
 int id none 0x7f060010
 int id normal 0x7f060000
+int id parcelalines_fragment 0x7f06004b
 int id progress_circular 0x7f060034
 int id progress_horizontal 0x7f060035
 int id radio 0x7f06002d

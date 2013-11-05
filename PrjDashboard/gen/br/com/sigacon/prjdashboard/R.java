@@ -1013,7 +1013,6 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f060023;
         public static final int always=0x7f06000b;
         public static final int article=0x7f060042;
-        public static final int article_fragment=0x7f06004b;
         public static final int beginning=0x7f060011;
         public static final int button1=0x7f060048;
         public static final int checkbox=0x7f06002b;
@@ -1026,9 +1025,9 @@ containing a value of this type.
         public static final int end=0x7f060013;
         public static final int expand_activities_button=0x7f060024;
         public static final int expanded_menu=0x7f06002a;
+        public static final int extratolines_fragment=0x7f06004a;
         public static final int fileName=0x7f060047;
         public static final int fragment_container=0x7f060049;
-        public static final int headlines_fragment=0x7f06004a;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f060028;
@@ -1042,6 +1041,7 @@ containing a value of this type.
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
+        public static final int parcelalines_fragment=0x7f06004b;
         public static final int progress_circular=0x7f060034;
         public static final int progress_horizontal=0x7f060035;
         public static final int radio=0x7f06002d;
