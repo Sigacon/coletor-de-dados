@@ -1174,12 +1174,12 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f050011;
-        public static final int app_name=0x7f050000;
+        public static final int app_name=0x7f050001;
         public static final int btn_string=0x7f050013;
         public static final int currentDir=0x7f050005;
         public static final int fileSize=0x7f050004;
         public static final int folder=0x7f050002;
-        public static final int hello=0x7f050001;
+        public static final int hello=0x7f050000;
         public static final int parentDirectory=0x7f050003;
     }
     public static final class style {

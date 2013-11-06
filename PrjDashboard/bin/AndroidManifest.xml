@@ -40,7 +40,7 @@
             android:name="br.com.thinkti.android.filechooser.FileChooser"
             android:screenOrientation="landscape">>
        	</activity>
-       	<activity android:name="com.example.android.fragments.MenuWithFragment"></activity>    
+       	<activity android:name="br.com.sigacon.fragments.MenuWithFragment"></activity>    
     </application>
     
 </manifest>

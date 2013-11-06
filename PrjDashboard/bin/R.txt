@@ -370,12 +370,12 @@ int string abc_searchview_description_submit 0x7f05000d
 int string abc_searchview_description_voice 0x7f05000e
 int string abc_shareactionprovider_share_with 0x7f050012
 int string abc_shareactionprovider_share_with_application 0x7f050011
-int string app_name 0x7f050000
+int string app_name 0x7f050001
 int string btn_string 0x7f050013
 int string currentDir 0x7f050005
 int string fileSize 0x7f050004
 int string folder 0x7f050002
-int string hello 0x7f050001
+int string hello 0x7f050000
 int string parentDirectory 0x7f050003
 int style AppBaseTheme 0x7f0b007f
 int style AppTheme 0x7f0b0080

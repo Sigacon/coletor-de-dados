@@ -1,7 +1,7 @@
 package br.com.sigacon.prjdashboard;
 
-import com.example.android.fragments.MenuWithFragment;
 
+import br.com.sigacon.fragments.MenuWithFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
