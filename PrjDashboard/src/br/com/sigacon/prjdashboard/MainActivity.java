@@ -1,5 +1,7 @@
 package br.com.sigacon.prjdashboard;
 
+
+import br.com.sigacon.fragments.MenuWithFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -25,10 +27,12 @@ public class MainActivity extends ActionBarActivity {
     }
     
     public void coletarDados(View view){
-        Toast.makeText(getApplicationContext(), "Coletar Dados", Toast.LENGTH_LONG).show();
+    	Intent intent = new Intent(this, MenuWithFragment.class);
+    	startActivity(intent);
+        //Toast.makeText(getApplicationContext(), "Coletar Dados", Toast.LENGTH_LONG).show();
     }
 
     public void configuracoes(View view){
-    	Toast.makeText(getApplicationContext(), "Configurações", Toast.LENGTH_SHORT).show();
+    	Toast.makeText(getApplicationContext(), "Configuraï¿½ï¿½es", Toast.LENGTH_SHORT).show();
     }
 }
