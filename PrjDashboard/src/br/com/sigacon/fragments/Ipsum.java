@@ -18,9 +18,9 @@ package br.com.sigacon.fragments;
 public class Ipsum {
 
     static String[] Extratos = {
-        "Extrato 1",
-        "Extrato 2",
-        "Extrato 3"
+        "Estrato 1",
+        "Estrato 2",
+        "Estrato 3"
     };
 
     static String[][] Parcelas = {
