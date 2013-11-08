@@ -5,7 +5,6 @@ import br.com.sigacon.prjdashboard.R;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 
 public class MenuWithFragment extends FragmentActivity 
         implements ExtratoLinesFragment.OnExtratolineSelectedListener {
