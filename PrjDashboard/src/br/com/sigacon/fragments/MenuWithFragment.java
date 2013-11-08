@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 public class MenuWithFragment extends FragmentActivity 
-        implements ExtratoLinesFragment.OnExtratolineSelectedListener {
+        implements EstratoLinesFragment.OnExtratolineSelectedListener {
 
     /** Called when the activity is first created. */
     @Override
@@ -27,7 +27,7 @@ public class MenuWithFragment extends FragmentActivity
             }
 
             // Create an instance of ExampleFragment
-            ExtratoLinesFragment firstFragment = new ExtratoLinesFragment();
+            EstratoLinesFragment firstFragment = new EstratoLinesFragment();
 
             // In case this activity was started with special instructions from an Intent,
             // pass the Intent's extras to the fragment as arguments

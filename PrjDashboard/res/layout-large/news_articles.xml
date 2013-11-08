@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment android:name="br.com.sigacon.fragments.ExtratoLinesFragment"
+    <fragment android:name="br.com.sigacon.fragments.EstratoLinesFragment"
               android:id="@+id/extratolines_fragment"
               android:layout_weight="1"
               android:layout_width="0dp"
