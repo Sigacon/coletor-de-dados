@@ -1,14 +1,13 @@
 package br.com.sigacon.prjdashboard;
 
-
-import br.com.sigacon.fragments.MenuWithFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import com.actionbarsherlock.app.SherlockActivity;
 import android.view.View;
 import android.widget.Toast;
+import br.com.sigacon.sherlockFragments.FragmentLayoutSupport;
 	
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends SherlockActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,12 @@ public class MainActivity extends ActionBarActivity {
     }
     
     public void coletarDados(View view){
-    	Intent intent = new Intent(this, MenuWithFragment.class);
+    	Intent intent = new Intent(this, FragmentLayoutSupport.class);
     	startActivity(intent);
         //Toast.makeText(getApplicationContext(), "Coletar Dados", Toast.LENGTH_LONG).show();
     }
 
     public void configuracoes(View view){
-    	Toast.makeText(getApplicationContext(), "Configura��es", Toast.LENGTH_SHORT).show();
+    	Toast.makeText(getApplicationContext(), "Configuracoes", Toast.LENGTH_SHORT).show();
     }
 }

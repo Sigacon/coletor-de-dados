@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import br.com.thinkti.android.filechooser.FileChooser;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
-import android.support.v7.app.ActionBarActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.app.SherlockActivity;
 	
-public class ImportarDadosActivity extends ActionBarActivity {
+public class ImportarDadosActivity extends SherlockActivity {
 	private static final int FILE_CHOOSER =  10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class ImportarDadosActivity extends ActionBarActivity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.importar, menu);
+    	getSupportMenuInflater().inflate(R.menu.importar, menu);
         return true;
     }
     public void chooseFile(View view)

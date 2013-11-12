@@ -1,11 +1,10 @@
 package br.com.sigacon.prjdashboard;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.Toast;
-import android.support.v7.app.ActionBarActivity;
+import com.actionbarsherlock.app.SherlockActivity;
 	
-public class ExportarDadosActivity extends ActionBarActivity {
+public class ExportarDadosActivity extends SherlockActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
