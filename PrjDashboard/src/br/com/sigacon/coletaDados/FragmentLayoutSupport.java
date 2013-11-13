@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package br.com.sigacon.sherlockFragments;
+package br.com.sigacon.coletaDados;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import br.com.sigacon.prjdashboard.R;
 
@@ -34,7 +35,6 @@ import com.actionbarsherlock.app.SherlockListFragment;
  */
 public class FragmentLayoutSupport extends SherlockFragmentActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(com.actionbarsherlock.R.style.Theme_Sherlock_Light); //Used for theme switching in samples
@@ -43,13 +43,12 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
         setContentView(R.layout.fragment_layout_support);
     }
 
-
     /**
      * This is a secondary activity, to show what the user has selected
      * when the screen is not large enough to show it all in one activity.
      */
 
-    public static class DetailsActivity extends SherlockFragmentActivity {
+    public static class ParcelasActivity extends SherlockFragmentActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +65,8 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
 
             if (savedInstanceState == null) {
                 // During initial setup, plug in the details fragment.
-                DetailsFragment details = new DetailsFragment();
-                details.setArguments(getIntent().getExtras());
+                ParcelasFragment parcelas = new ParcelasFragment();
+                parcelas.setArguments(getIntent().getExtras());
                 getSupportFragmentManager().beginTransaction().add(android.R.id.content, null).commit();
             }
         }
@@ -80,7 +79,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
      * data to the user as appropriate based on the currrent UI layout.
      */
 
-    public static class TitlesFragment extends SherlockListFragment {
+    public static class EstratosFragment extends SherlockListFragment {
         boolean mDualPane;
         int mCurCheckPosition = 0;
 
@@ -91,12 +90,17 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
             // Populate list with our static array of titles.
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.simple_list_item_checkable_1,
-                    android.R.id.text1, Shakespeare.TITLES));
+                    android.R.id.text1, ListasFragment.ESTRATO));
 
+            View estratosFrame = getActivity().findViewById(R.id.estratos);
+            estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
+            
             // Check to see if we have a frame in which to embed the details
             // fragment directly in the containing UI.
-            View detailsFrame = getActivity().findViewById(R.id.details);
-            mDualPane = detailsFrame != null && detailsFrame.getVisibility() == View.VISIBLE;
+            View parcelasFrame = getActivity().findViewById(R.id.parcelas);
+            parcelasFrame.setBackgroundColor(getResources().getColor(R.color.white));
+            
+            mDualPane = parcelasFrame != null && parcelasFrame.getVisibility() == View.VISIBLE;
 
             if (savedInstanceState != null) {
                 // Restore last state for checked position.
@@ -107,7 +111,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
                 // In dual-pane mode, the list view highlights the selected item.
                 getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
                 // Make sure our UI is in the correct state.
-                showDetails(mCurCheckPosition);
+                showParcelas(mCurCheckPosition);
             }
         }
 
@@ -119,7 +123,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
 
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
-            showDetails(position);
+            showParcelas(position);
         }
 
         /**
@@ -127,7 +131,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
          * displaying a fragment in-place in the current UI, or starting a
          * whole new activity in which it is displayed.
          */
-        void showDetails(int index) {
+        void showParcelas(int index) {
             mCurCheckPosition = index;
 
             if (mDualPane) {
@@ -136,36 +140,37 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
                 getListView().setItemChecked(index, true);
                 
                 // Check what fragment is currently shown, replace if needed.
-                DetailsFragment details = (DetailsFragment) getFragmentManager().findFragmentById(R.id.details);
-                if (details != null) {
-                	details.setListAdapter(new ArrayAdapter<String>(getActivity(),
+                ParcelasFragment parcelas = (ParcelasFragment) getFragmentManager().findFragmentById(R.id.parcelas);
+                
+                if (parcelas != null) {
+                	parcelas.setListAdapter(new ArrayAdapter<String>(getActivity(),
                             R.layout.simple_list_item_checkable_1,
-                            android.R.id.text1, Shakespeare.DIALOGUE[index]));
+                            android.R.id.text1, ListasFragment.PARCELAS[index]));
                 }
-
             }
         }
     }
 
-    public static class DetailsFragment extends SherlockListFragment {
-        boolean mDualPane;
+    public static class ParcelasFragment extends SherlockListFragment {
+       // boolean mDualPane;
         int mCurCheckPosition = 0;
 
-        @Override
+		@Override
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
 
             // Populate list with our static array of titles.
+            
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.simple_list_item_checkable_1,
-                    android.R.id.text1, Shakespeare.DIALOGUE[mCurCheckPosition]));
+                    android.R.id.text1, ListasFragment.PARCELAS[mCurCheckPosition]));
 
             // Check to see if we have a frame in which to embed the details
             // fragment directly in the containing UI.
-            View detailsFrame = getActivity().findViewById(R.id.details);
-            mDualPane = detailsFrame != null && detailsFrame.getVisibility() == View.VISIBLE;
+            View parcelasFrame = getActivity().findViewById(R.id.parcelas);
+           // mDualPane = detailsFrame != null && detailsFrame.getVisibility() == View.VISIBLE;
 
-            if (savedInstanceState != null) {
+          /*  if (savedInstanceState != null) {
                 // Restore last state for checked position.
                 mCurCheckPosition = savedInstanceState.getInt("curChoice", 0);
             }
@@ -173,22 +178,18 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
             if (mDualPane) {
                 // In dual-pane mode, the list view highlights the selected item.
                 getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-                // Make sure our UI is in the correct state.
-               // showDetails(mCurCheckPosition);
-            }
-        }
-
+            }*/
+        }/*
+        
         @Override
         public void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
             outState.putInt("curChoice", mCurCheckPosition);
         }
-
+*/
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
         	Toast.makeText(getSherlockActivity(), "Parcela", Toast.LENGTH_SHORT).show();
         }
-
- 
     }
 }

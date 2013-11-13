@@ -1,11 +1,12 @@
-package br.com.sigacon.prjdashboard;
+package br.com.sigacon.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.View;
 import android.widget.Toast;
-import br.com.sigacon.sherlockFragments.FragmentLayoutSupport;
+import br.com.sigacon.coletaDados.FragmentLayoutSupport;
+import br.com.sigacon.prjdashboard.R;
 	
 public class MainActivity extends SherlockActivity {
 
@@ -28,7 +29,6 @@ public class MainActivity extends SherlockActivity {
     public void coletarDados(View view){
     	Intent intent = new Intent(this, FragmentLayoutSupport.class);
     	startActivity(intent);
-        //Toast.makeText(getApplicationContext(), "Coletar Dados", Toast.LENGTH_LONG).show();
     }
 
     public void configuracoes(View view){

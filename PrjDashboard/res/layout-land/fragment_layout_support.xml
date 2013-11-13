@@ -22,13 +22,20 @@
     android:orientation="horizontal"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <fragment class="br.com.sigacon.sherlockFragments.FragmentLayoutSupport$TitlesFragment"
-            android:id="@+id/titles" android:layout_weight="1"
-            android:layout_width="0px" android:layout_height="match_parent" />
+    <fragment 
+        class="br.com.sigacon.coletaDados.FragmentLayoutSupport$EstratosFragment"
+        android:id="@+id/estratos" 
+        android:layout_weight="2"
+        android:layout_width="0dp" 
+        android:layout_height="match_parent" />
 
-    <fragment class="br.com.sigacon.sherlockFragments.FragmentLayoutSupport$DetailsFragment" 
-        android:id="@+id/details" android:layout_weight="1"
-        android:layout_width="0px" android:layout_height="match_parent" />
+    <fragment 
+        class="br.com.sigacon.coletaDados.FragmentLayoutSupport$ParcelasFragment" 
+        android:id="@+id/parcelas" 
+        android:layout_weight="3"
+        android:layout_width="0dp" 
+        android:layout_height="match_parent"
+     />
 
 </LinearLayout>
 

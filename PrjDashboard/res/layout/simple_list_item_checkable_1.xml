@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<br.com.sigacon.sherlockFragments.CheckableFrameLayout
+<br.com.sigacon.coletaDados.CheckableFrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,5 +25,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:minHeight="?android:attr/listPreferredItemHeight"
             android:gravity="center_vertical"
+            android:paddingLeft="20dp"
     />
-</br.com.sigacon.sherlockFragments.CheckableFrameLayout>
+</br.com.sigacon.coletaDados.CheckableFrameLayout>

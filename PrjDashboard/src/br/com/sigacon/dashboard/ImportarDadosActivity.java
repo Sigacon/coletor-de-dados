@@ -1,7 +1,8 @@
-package br.com.sigacon.prjdashboard;
+package br.com.sigacon.dashboard;
 
 import java.util.ArrayList;
 
+import br.com.sigacon.prjdashboard.R;
 import br.com.thinkti.android.filechooser.FileChooser;
 import android.content.Intent;
 import android.os.Bundle;

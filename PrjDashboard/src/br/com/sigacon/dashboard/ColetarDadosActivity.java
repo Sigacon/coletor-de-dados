@@ -1,6 +1,8 @@
-package br.com.sigacon.prjdashboard;
+package br.com.sigacon.dashboard;
 
 import android.os.Bundle;
+import br.com.sigacon.prjdashboard.R;
+
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.app.SherlockActivity;
 	

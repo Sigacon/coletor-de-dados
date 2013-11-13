@@ -1,10 +1,10 @@
-package br.com.sigacon.sherlockFragments;
+package br.com.sigacon.coletaDados;
 
-public final class Shakespeare {
+public final class ListasFragment {
     /**
      * Our data, part 1.
      */
-    public static final String[] TITLES =
+    public static final String[] ESTRATO =
     {
             "Estrato 1",
             "Estrato 2",
@@ -19,7 +19,7 @@ public final class Shakespeare {
     /**
      * Our data, part 2.
      */
-    public static final String[][] DIALOGUE =
+    public static final String[][] PARCELAS =
     {
     	{"Parcela 1","Parcela 2","Parcela 3","Parcela 4","Parcela 5","Parcela 6","Parcela 7","Parcela 8"},
     	{"Parcela 1","Parcela 2","Parcela 3","Parcela 4","Parcela 5","Parcela 6"},

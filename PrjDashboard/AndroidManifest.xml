@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Sherlock.Light" >
         <activity
-            android:name="br.com.sigacon.prjdashboard.MainActivity"
+            android:name="br.com.sigacon.dashboard.MainActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape">
             <intent-filter>
@@ -22,17 +22,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.sigacon.prjdashboard.ColetarDadosActivity"
+            android:name="br.com.sigacon.dashboard.ColetarDadosActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape">
         </activity>
         <activity
-            android:name="br.com.sigacon.prjdashboard.ExportarDadosActivity"
+            android:name="br.com.sigacon.dashboard.ExportarDadosActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape">
         </activity>
         <activity
-            android:name="br.com.sigacon.prjdashboard.ImportarDadosActivity"
+            android:name="br.com.sigacon.dashboard.ImportarDadosActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape">
         </activity>
@@ -41,7 +41,7 @@
             android:screenOrientation="landscape">
        	</activity>
        	<activity 
-       	    android:name="br.com.sigacon.sherlockFragments.FragmentLayoutSupport"
+       	    android:name="br.com.sigacon.coletaDados.FragmentLayoutSupport"
             android:screenOrientation="landscape">
        	</activity>    
     </application>
