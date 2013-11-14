@@ -37,7 +37,7 @@ import com.actionbarsherlock.view.MenuItem;
  * This sample provides a different layout (and activity flow) when run in
  * landscape.
  */
-public class FragmentEstratos extends SherlockFragmentActivity {
+public class FragmentArvores extends SherlockFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
