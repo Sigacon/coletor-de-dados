@@ -179,7 +179,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
 		
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
-        	Toast.makeText(getSherlockActivity(), "Parcela", Toast.LENGTH_SHORT).show();
+        	Toast.makeText(getSherlockActivity(), "Parcela "+ position, Toast.LENGTH_SHORT).show();
         }
     }
 }
