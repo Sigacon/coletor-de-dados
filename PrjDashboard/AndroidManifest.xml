@@ -44,7 +44,14 @@
        	    android:name="br.com.sigacon.coletaDados.FragmentEstratos"
             android:screenOrientation="landscape">
        	</activity>
-       	<activity android:name="br.com.sigacon.coletaDados.FragmentArvores"></activity>    
+       	<activity 
+       		android:name="br.com.sigacon.coletaDados.FragmentParcelas"
+            android:screenOrientation="landscape">
+       	</activity> 
+       	<activity 
+       		android:name="br.com.sigacon.coletaDados.FragmentArvores"
+            android:screenOrientation="landscape">
+       	</activity> 
     </application>
     
 </manifest>
