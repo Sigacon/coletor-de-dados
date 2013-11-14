@@ -30,6 +30,7 @@ import br.com.sigacon.prjdashboard.R;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
 /**
@@ -59,7 +60,11 @@ public class FragmentEstratos extends SherlockFragmentActivity {
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
-    
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getSupportMenuInflater().inflate(R.menu.coletar_dados, menu);
+        return true;
+    }
     public static class ParcelasActivity extends SherlockFragmentActivity {
 
 		@Override

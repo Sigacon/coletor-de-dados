@@ -46,7 +46,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        setContentView(R.layout.fragment_layout_estratos);
+        setContentView(R.layout.fragment_layout_arvores);
     }
 
 	@Override
@@ -91,7 +91,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
      * data to the user as appropriate based on the currrent UI layout.
      */
 
-    public static class EstratosFragment extends SherlockListFragment {
+    public static class ArvoresFragment extends SherlockListFragment {
         boolean mDualPane;
         int mCurCheckPosition = 0;
 
@@ -102,9 +102,9 @@ public class FragmentArvores extends SherlockFragmentActivity {
             // Populate list with our static array of titles.
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.list_item_estrato_checkable,
-                    android.R.id.text1, ListasFragment.ESTRATO));
+                    android.R.id.text1, ListasFragment.ARVORES));
 
-            View estratosFrame = getActivity().findViewById(R.id.estratos);
+            View estratosFrame = getActivity().findViewById(R.id.arvores);
             estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
             
             // Check to see if we have a frame in which to embed the details
