@@ -16,17 +16,21 @@
 
 package br.com.sigacon.coletaDados;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.prjdashboard.R;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.view.MenuItem;
 
 /**
  * Demonstration of using fragments to implement different activity layouts.
@@ -39,18 +43,26 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(com.actionbarsherlock.R.style.Theme_Sherlock_Light); //Used for theme switching in samples
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         setContentView(R.layout.fragment_layout_support);
     }
 
-    /**
-     * This is a secondary activity, to show what the user has selected
-     * when the screen is not large enough to show it all in one activity.
-     */
-
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	   switch (item.getItemId()) {
+	      case android.R.id.home:
+	         NavUtils.navigateUpTo(this,
+	               new Intent(this, MainActivity.class));
+	         return true;
+	   }
+	   return super.onOptionsItemSelected(item);
+	}
+    
     public static class ParcelasActivity extends SherlockFragmentActivity {
 
-        @Override
+		@Override
         protected void onCreate(Bundle savedInstanceState) {
             //setTheme(com.actionbarsherlock.R.style.Theme_Sherlock_Light); //Used for theme switching in samples
             super.onCreate(savedInstanceState);
@@ -89,7 +101,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
 
             // Populate list with our static array of titles.
             setListAdapter(new ArrayAdapter<String>(getActivity(),
-                    R.layout.simple_list_item_checkable_1,
+                    R.layout.list_item_estrato_checkable,
                     android.R.id.text1, ListasFragment.ESTRATO));
 
             View estratosFrame = getActivity().findViewById(R.id.estratos);
@@ -144,7 +156,7 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
                 
                 if (parcelas != null) {
                 	parcelas.setListAdapter(new ArrayAdapter<String>(getActivity(),
-                            R.layout.simple_list_item_checkable_1,
+                            R.layout.list_item_parcela_checkable,
                             android.R.id.text1, ListasFragment.PARCELAS[index]));
                 }
             }
@@ -160,13 +172,9 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
             super.onActivityCreated(savedInstanceState);
 
             // Populate list with our static array of titles.
-            
             setListAdapter(new ArrayAdapter<String>(getActivity(),
-                    R.layout.simple_list_item_checkable_1,
+                    R.layout.list_item_parcela_checkable,
                     android.R.id.text1, ListasFragment.PARCELAS[mCurCheckPosition]));
-
-            //View parcelasFrame = getActivity().findViewById(R.id.parcelas);
-
         }
 		
         @Override

@@ -439,9 +439,10 @@ int layout dashboard 0x7f030015
 int layout file_view 0x7f030016
 int layout fragment_layout_support 0x7f030017
 int layout importar_dados 0x7f030018
-int layout sherlock_spinner_dropdown_item 0x7f030019
-int layout sherlock_spinner_item 0x7f03001a
-int layout simple_list_item_checkable_1 0x7f03001b
+int layout list_item_estrato_checkable 0x7f030019
+int layout list_item_parcela_checkable 0x7f03001a
+int layout sherlock_spinner_dropdown_item 0x7f03001b
+int layout sherlock_spinner_item 0x7f03001c
 int menu coletar_dados 0x7f0b0000
 int menu importar 0x7f0b0001
 int string abs__action_bar_home_description 0x7f040006
