@@ -188,7 +188,8 @@ public class FragmentEstratos extends SherlockFragmentActivity {
 		
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
-        	Toast.makeText(getSherlockActivity(), "Parcela "+ position, Toast.LENGTH_SHORT).show();
+        	Intent intent = new Intent(getActivity().getApplicationContext(), FragmentParcelas.class);
+        	startActivity(intent);
         }
     }
 }
