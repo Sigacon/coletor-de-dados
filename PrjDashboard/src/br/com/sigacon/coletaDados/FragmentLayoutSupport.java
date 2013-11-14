@@ -165,28 +165,10 @@ public class FragmentLayoutSupport extends SherlockFragmentActivity {
                     R.layout.simple_list_item_checkable_1,
                     android.R.id.text1, ListasFragment.PARCELAS[mCurCheckPosition]));
 
-            // Check to see if we have a frame in which to embed the details
-            // fragment directly in the containing UI.
-            View parcelasFrame = getActivity().findViewById(R.id.parcelas);
-           // mDualPane = detailsFrame != null && detailsFrame.getVisibility() == View.VISIBLE;
+            //View parcelasFrame = getActivity().findViewById(R.id.parcelas);
 
-          /*  if (savedInstanceState != null) {
-                // Restore last state for checked position.
-                mCurCheckPosition = savedInstanceState.getInt("curChoice", 0);
-            }
-
-            if (mDualPane) {
-                // In dual-pane mode, the list view highlights the selected item.
-                getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-            }*/
-        }/*
-        
-        @Override
-        public void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            outState.putInt("curChoice", mCurCheckPosition);
         }
-*/
+		
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
         	Toast.makeText(getSherlockActivity(), "Parcela", Toast.LENGTH_SHORT).show();
