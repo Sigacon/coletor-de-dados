@@ -23,7 +23,6 @@ import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.prjdashboard.R;
 
@@ -46,7 +45,8 @@ public class FragmentArvores extends SherlockFragmentActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        setContentView(R.layout.fragment_layout_arvores);
+        setTitle("Parcelas");
+        setContentView(R.layout.fragment_layout_parcelas);
     }
 
 	@Override
@@ -77,11 +77,11 @@ public class FragmentArvores extends SherlockFragmentActivity {
 
             if (savedInstanceState == null) {
                 // During initial setup, plug in the details fragment.
-                ParcelasFragment parcelas = new ParcelasFragment();
-                parcelas.setArguments(getIntent().getExtras());
+                //FormParcelasFragment parcelas = new FormParcelasFragment();
+                //parcelas.setArguments(getIntent().getExtras());
                 getSupportFragmentManager().beginTransaction().add(android.R.id.content, null).commit();
             }
-        }
+        }		
     }
 
 
@@ -91,7 +91,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
      * data to the user as appropriate based on the currrent UI layout.
      */
 
-    public static class ArvoresFragment extends SherlockListFragment {
+    public static class MapParcelasFragment extends SherlockListFragment {
         boolean mDualPane;
         int mCurCheckPosition = 0;
 
@@ -102,15 +102,15 @@ public class FragmentArvores extends SherlockFragmentActivity {
             // Populate list with our static array of titles.
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.list_item_estrato_checkable,
-                    android.R.id.text1, ListasFragment.ARVORES));
+                    android.R.id.text1, ListasFragment.ESTRATO));
 
-            View estratosFrame = getActivity().findViewById(R.id.arvores);
+            View estratosFrame = getActivity().findViewById(R.id.estratos);
             estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
             
             // Check to see if we have a frame in which to embed the details
             // fragment directly in the containing UI.
             View parcelasFrame = getActivity().findViewById(R.id.parcelas);
-            parcelasFrame.setBackgroundColor(getResources().getColor(R.color.white));
+            //parcelasFrame.setBackgroundColor(getResources().getColor(R.color.white));
             
             mDualPane = parcelasFrame != null && parcelasFrame.getVisibility() == View.VISIBLE;
 
@@ -144,42 +144,111 @@ public class FragmentArvores extends SherlockFragmentActivity {
          * whole new activity in which it is displayed.
          */
         void showParcelas(int index) {
-            mCurCheckPosition = index;
+        	mCurCheckPosition = index;
 
             if (mDualPane) {
                 // We can display everything in-place with fragments, so update
                 // the list to highlight the selected item and show the data.
                 getListView().setItemChecked(index, true);
-                
+
                 // Check what fragment is currently shown, replace if needed.
-                ParcelasFragment parcelas = (ParcelasFragment) getFragmentManager().findFragmentById(R.id.parcelas);
-                
-                if (parcelas != null) {
-                	parcelas.setListAdapter(new ArrayAdapter<String>(getActivity(),
-                            R.layout.list_item_parcela_checkable,
-                            android.R.id.text1, ListasFragment.PARCELAS[index]));
-                }
-            }
+                /*
+                FormParcelasFragment details = (FormParcelasFragment)
+                        getFragmentManager().findFragmentById(R.id.formParcelas);
+                if (details == null || details.getShownIndex() != index) {
+                    // Make new fragment to show this selection.
+                    details = FormParcelasFragment.newInstance(index);
+
+                    // Execute a transaction, replacing any existing fragment
+                    // with this one inside the frame.
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.formParcelas, details);
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    ft.commit();
+                }*/
+
+            } /*else {
+                // Otherwise we need to launch a new activity to display
+                // the dialog fragment with selected text.
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), DetailsActivity.class);
+                intent.putExtra("index", index);
+                startActivity(intent);
+            }*/
         }
     }
+    /*
+    public static class FormParcelasFragment extends SherlockFragment {
+      
+        public static FormParcelasFragment newInstance(int index) {
+        	FormParcelasFragment f = new FormParcelasFragment();
 
-    public static class ParcelasFragment extends SherlockListFragment {
-       // boolean mDualPane;
-        int mCurCheckPosition = 0;
+            // Supply index input as an argument.
+            Bundle args = new Bundle();
+            args.putInt("index", index);
+            f.setArguments(args);
 
-		@Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-
-            // Populate list with our static array of titles.
-            setListAdapter(new ArrayAdapter<String>(getActivity(),
-                    R.layout.list_item_parcela_checkable,
-                    android.R.id.text1, ListasFragment.PARCELAS[mCurCheckPosition]));
+            return f;
         }
-		
+
+        public int getShownIndex() {
+            return getArguments().getInt("index", 0);
+        }
+
         @Override
-        public void onListItemClick(ListView l, View v, int position, long id) {
-        	Toast.makeText(getSherlockActivity(), "Parcela "+ position, Toast.LENGTH_SHORT).show();
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            if (container == null) {
+                // We have different layouts, and in one of them this
+                // fragment's containing frame doesn't exist.  The fragment
+                // may still be created from its saved state, but there is
+                // no reason to try to create its view hierarchy because it
+                // won't be displayed.  Note this is not needed -- we could
+                // just run the code below, where we would create and return
+                // the view hierarchy; it would just never be used.
+                return null;
+            }
+
+            ScrollView scroller = new ScrollView(getActivity());
+            TextView text = new TextView(getActivity());
+            int padding = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                    4, getActivity().getResources().getDisplayMetrics());
+            text.setPadding(padding, padding, padding, padding);
+            scroller.addView(text);
+            text.setText("So shaken as we are, so wan with care," +
+                    "Find we a time for frighted peace to pant," +
+                    "And breathe short-winded accents of new broils" +
+                    "To be commenced in strands afar remote." +
+                    "No more the thirsty entrance of this soil" +
+                    "Shall daub her lips with her own children's blood;" +
+                    "Nor more shall trenching war channel her fields," +
+                    "Nor bruise her flowerets with the armed hoofs" +
+                    "Of hostile paces: those opposed eyes," +
+                    "Which, like the meteors of a troubled heaven," +
+                    "All of one nature, of one substance bred," +
+                    "Did lately meet in the intestine shock" +
+                    "And furious close of civil butchery" +
+                    "Shall now, in mutual well-beseeming ranks," +
+                    "March all one way and be no more opposed" +
+                    "Against acquaintance, kindred and allies:" +
+                    "The edge of war, like an ill-sheathed knife," +
+                    "No more shall cut his master. Therefore, friends," +
+                    "As far as to the sepulchre of Christ," +
+                    "Whose soldier now, under whose blessed cross" +
+                    "We are impressed and engaged to fight," +
+                    "Forthwith a power of English shall we levy;" +
+                    "Whose arms were moulded in their mothers' womb" +
+                    "To chase these pagans in those holy fields" +
+                    "Over whose acres walk'd those blessed feet" +
+                    "Which fourteen hundred years ago were nail'd" +
+                    "For our advantage on the bitter cross." +
+                    "But this our purpose now is twelve month old," +
+                    "And bootless 'tis to tell you we will go:" +
+                    "Therefore we meet not now. Then let me hear" +
+                    "Of you, my gentle cousin Westmoreland," +
+                    "What yesternight our council did decree" +
+                    "In forwarding this dear expedience.");
+            return scroller;
         }
-    }
+    }*/
 }
