@@ -23,19 +23,19 @@ import android.widget.Checkable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class CheckableFrameLayout extends FrameLayout implements Checkable {
+public class CheckableEstratos extends FrameLayout implements Checkable {
     private boolean mChecked;
     public static final int[] CHECKED_STATE = {android.R.attr.state_checked};
     
-    public CheckableFrameLayout(Context context) {
+    public CheckableEstratos(Context context) {
         super(context);
     }
 
-    public CheckableFrameLayout(Context context, AttributeSet attrs) {
+    public CheckableEstratos(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
     
-    public CheckableFrameLayout(Context context, AttributeSet attrs, int defStyle) {
+    public CheckableEstratos(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
     

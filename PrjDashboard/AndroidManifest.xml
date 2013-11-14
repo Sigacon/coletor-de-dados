@@ -41,7 +41,7 @@
             android:screenOrientation="landscape">
        	</activity>
        	<activity 
-       	    android:name="br.com.sigacon.coletaDados.FragmentLayoutSupport"
+       	    android:name="br.com.sigacon.coletaDados.FragmentEstratos"
             android:screenOrientation="landscape">
        	</activity>    
     </application>

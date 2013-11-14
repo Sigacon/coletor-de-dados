@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.View;
 import android.widget.Toast;
-import br.com.sigacon.coletaDados.FragmentLayoutSupport;
+import br.com.sigacon.coletaDados.FragmentEstratos;
 import br.com.sigacon.prjdashboard.R;
 	
 public class MainActivity extends SherlockActivity {
@@ -27,7 +27,7 @@ public class MainActivity extends SherlockActivity {
     }
     
     public void coletarDados(View view){
-    	Intent intent = new Intent(this, FragmentLayoutSupport.class);
+    	Intent intent = new Intent(this, FragmentEstratos.class);
     	startActivity(intent);
     }
 
