@@ -30,4 +30,15 @@ public final class ListasFragment {
     	{"Parcela 1","Parcela 2","Parcela 3","Parcela 4","Parcela 5","Parcela 6","Parcela 7","Parcela 8","Parcela 9","Parcela 10"},
     	{"Parcela 1","Parcela 2","Parcela 3","Parcela 4","Parcela 5"}
     };
+    public static final String[] ARVORES =
+    {
+    	"Arvore 1",
+    	"Arvore 2",
+    	"Arvore 3",
+    	"Arvore 4",
+    	"Arvore 5",
+    	"Arvore 6",
+    	"Arvore 7",
+    	"Arvore 8"
+    };
 }
