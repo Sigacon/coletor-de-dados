@@ -23,7 +23,6 @@ import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.prjdashboard.R;
 
@@ -109,7 +108,7 @@ public class FragmentArvoresRateadas extends SherlockFragmentActivity {
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.list_item_estrato_checkable,
                     android.R.id.text1, ListasFragment.ARVORES));
-            View estratosFrame = getActivity().findViewById(R.id.estratos);
+            View estratosFrame = getActivity().findViewById(R.id.arvores_rateadas);
             estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
             
             // Check to see if we have a frame in which to embed the details
