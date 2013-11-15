@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item
-        android:id="@+id/action_copy"
-        android:orderInCategory="100"
-        android:showAsAction="always"
-        android:icon="@android:drawable/ic_menu_month"
-        android:title="Calendario"/>
-    <item
-        android:id="@+id/action_teste"
-        android:orderInCategory="100"
-        android:showAsAction="always"
-        android:icon="@android:drawable/arrow_down_float"
-        android:title="Arvores"/>
+    
 </menu>

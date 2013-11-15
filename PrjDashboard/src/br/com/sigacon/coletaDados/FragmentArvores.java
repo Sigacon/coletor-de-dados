@@ -23,12 +23,14 @@ import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.prjdashboard.R;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
 /**
@@ -45,8 +47,8 @@ public class FragmentArvores extends SherlockFragmentActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        setTitle("Parcelas");
-        setContentView(R.layout.fragment_layout_parcelas);
+        setTitle("Arvores");
+        setContentView(R.layout.fragment_layout_arvores);
     }
 
 	@Override
@@ -59,8 +61,12 @@ public class FragmentArvores extends SherlockFragmentActivity {
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
-    
-    public static class ParcelasActivity extends SherlockFragmentActivity {
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getSupportMenuInflater().inflate(R.menu.arvores, menu);
+        return true;
+    }
+    public static class ArvoresActivity extends SherlockFragmentActivity {
 
 		@Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +97,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
      * data to the user as appropriate based on the currrent UI layout.
      */
 
-    public static class MapParcelasFragment extends SherlockListFragment {
+    public static class ArvoresFragment extends SherlockListFragment {
         boolean mDualPane;
         int mCurCheckPosition = 0;
 
@@ -102,8 +108,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
             // Populate list with our static array of titles.
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.list_item_estrato_checkable,
-                    android.R.id.text1, ListasFragment.ESTRATO));
-
+                    android.R.id.text1, ListasFragment.ARVORES));
             View estratosFrame = getActivity().findViewById(R.id.estratos);
             estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
             
@@ -123,7 +128,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
                 // In dual-pane mode, the list view highlights the selected item.
                 getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
                 // Make sure our UI is in the correct state.
-                showParcelas(mCurCheckPosition);
+                showArvores(mCurCheckPosition);
             }
         }
 
@@ -135,7 +140,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
 
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
-            showParcelas(position);
+            showArvores(position);
         }
 
         /**
@@ -143,7 +148,7 @@ public class FragmentArvores extends SherlockFragmentActivity {
          * displaying a fragment in-place in the current UI, or starting a
          * whole new activity in which it is displayed.
          */
-        void showParcelas(int index) {
+        void showArvores(int index) {
         	mCurCheckPosition = index;
 
             if (mDualPane) {

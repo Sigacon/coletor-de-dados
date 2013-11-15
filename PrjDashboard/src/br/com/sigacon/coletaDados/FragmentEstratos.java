@@ -46,7 +46,7 @@ public class FragmentEstratos extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
+        setTitle("Estratos");
         setContentView(R.layout.fragment_layout_estratos);
     }
 
@@ -57,10 +57,6 @@ public class FragmentEstratos extends SherlockFragmentActivity {
 	         NavUtils.navigateUpTo(this,
 	               new Intent(this, MainActivity.class));
 	         return true;
-	      case R.id.action_teste:
-	    	  Intent intent = new Intent(this, FragmentArvores.class);
-	      	  startActivity(intent);
-	      	  return true;
 	   }
 	   return super.onOptionsItemSelected(item);
 	}

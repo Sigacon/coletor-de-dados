@@ -23,12 +23,14 @@ import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.prjdashboard.R;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
 /**
@@ -56,10 +58,18 @@ public class FragmentParcelas extends SherlockFragmentActivity {
 	         NavUtils.navigateUpTo(this,
 	               new Intent(this, MainActivity.class));
 	         return true;
+	      case R.id.action_save:
+	    	  Intent intent = new Intent(this, FragmentArvores.class);
+	      	  startActivity(intent);
+	      	  return true;
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
-    
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getSupportMenuInflater().inflate(R.menu.parcelas, menu);
+        return true;
+    }
     public static class ParcelasActivity extends SherlockFragmentActivity {
 
 		@Override
