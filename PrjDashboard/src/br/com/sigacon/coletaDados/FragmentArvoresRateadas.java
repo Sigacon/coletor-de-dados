@@ -21,8 +21,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -40,7 +38,7 @@ import com.actionbarsherlock.view.MenuItem;
  * This sample provides a different layout (and activity flow) when run in
  * landscape.
  */
-public class FragmentArvores extends SherlockFragmentActivity {
+public class FragmentArvoresRateadas extends SherlockFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +47,8 @@ public class FragmentArvores extends SherlockFragmentActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        setTitle("Arvores");
-        setContentView(R.layout.fragment_layout_arvores);
+        setTitle("Arvores Rateadas");
+        setContentView(R.layout.fragment_layout_arvores_rateadas);
     }
 
 	@Override
@@ -60,20 +58,12 @@ public class FragmentArvores extends SherlockFragmentActivity {
 	         NavUtils.navigateUpTo(this,
 	               new Intent(this, MainActivity.class));
 	         return true;
-	      case R.id.action_finish:
-	    	  Intent intent = new Intent(this, FragmentArvoresRateadas.class);
-	      	  startActivity(intent);
-		      return true;
-	      case R.id.action_add:
-	    	  Toast.makeText(getApplicationContext(), "Adicionar arvore", Toast.LENGTH_LONG).show();
-	      case R.id.action_save:
-	    	  Toast.makeText(getApplicationContext(), "Salvar dados", Toast.LENGTH_LONG).show();
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	getSupportMenuInflater().inflate(R.menu.arvores, menu);
+    	getSupportMenuInflater().inflate(R.menu.arvores_rateadas, menu);
         return true;
     }
     public static class ArvoresActivity extends SherlockFragmentActivity {
@@ -140,16 +130,6 @@ public class FragmentArvores extends SherlockFragmentActivity {
                 // Make sure our UI is in the correct state.
                 showArvores(mCurCheckPosition);
             }
-            getListView().setOnItemLongClickListener(new OnItemLongClickListener() {
-
-                @Override
-                public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-                        int arg2, long arg3) {
-                    Toast.makeText(getActivity(), "On long click listener", Toast.LENGTH_LONG).show();
-                    return true;
-                }
-            });
-            
         }
 
         @Override
@@ -162,7 +142,6 @@ public class FragmentArvores extends SherlockFragmentActivity {
         public void onListItemClick(ListView l, View v, int position, long id) {
             showArvores(position);
         }
-        
 
         /**
          * Helper function to show the details of a selected item, either by

@@ -6,4 +6,16 @@
         android:showAsAction="always"
         android:icon="@android:drawable/ic_menu_save"
         android:title="Arvores"/>
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Arvores"/>
+    <item
+        android:id="@+id/action_finish"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Finalizar Parcela"/>
 </menu>
