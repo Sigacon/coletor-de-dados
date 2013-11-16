@@ -24,7 +24,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import br.com.sigacon.dashboard.MainActivity;
-import br.com.sigacon.prjdashboard.R;
+import br.com.sigacon.sgcativosflorestais.R;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -108,12 +108,12 @@ public class FragmentArvoresRateadas extends SherlockFragmentActivity {
             setListAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.list_item_estrato_checkable,
                     android.R.id.text1, ListasFragment.ARVORES));
-            View estratosFrame = getActivity().findViewById(R.id.arvores_rateadas);
+            View estratosFrame = getActivity().findViewById(R.id.listRateadas);
             estratosFrame.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_arrowlist_activate));
             
             // Check to see if we have a frame in which to embed the details
             // fragment directly in the containing UI.
-            View parcelasFrame = getActivity().findViewById(R.id.parcelas);
+            View parcelasFrame = getActivity().findViewById(R.id.formRateadas);
             //parcelasFrame.setBackgroundColor(getResources().getColor(R.color.white));
             
             mDualPane = parcelasFrame != null && parcelasFrame.getVisibility() == View.VISIBLE;

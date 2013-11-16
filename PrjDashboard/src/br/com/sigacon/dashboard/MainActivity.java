@@ -6,7 +6,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import android.view.View;
 import android.widget.Toast;
 import br.com.sigacon.coletaDados.FragmentEstratos;
-import br.com.sigacon.prjdashboard.R;
+import br.com.sigacon.sgcativosflorestais.R;
 	
 public class MainActivity extends SherlockActivity {
 

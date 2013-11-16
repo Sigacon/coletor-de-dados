@@ -16,7 +16,7 @@
 
 package br.com.sigacon.coletaDados;
 
-import br.com.sigacon.prjdashboard.R;
+import br.com.sigacon.sgcativosflorestais.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Checkable;

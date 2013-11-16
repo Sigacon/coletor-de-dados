@@ -25,7 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import br.com.sigacon.dashboard.MainActivity;
-import br.com.sigacon.prjdashboard.R;
+import br.com.sigacon.sgcativosflorestais.R;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -60,11 +60,7 @@ public class FragmentEstratos extends SherlockFragmentActivity {
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
-	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	getSupportMenuInflater().inflate(R.menu.coletar_dados, menu);
-        return true;
-    }
+
     public static class ParcelasActivity extends SherlockFragmentActivity {
 
 		@Override
@@ -184,7 +180,7 @@ public class FragmentEstratos extends SherlockFragmentActivity {
 		
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
-        	Intent intent = new Intent(getActivity().getApplicationContext(), FragmentParcelas.class);
+        	Intent intent = new Intent(getActivity().getApplicationContext(), FragmentParcelasTabsPager.class);
         	startActivity(intent);
         }
     }
