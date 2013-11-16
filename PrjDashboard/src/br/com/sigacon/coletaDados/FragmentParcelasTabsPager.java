@@ -137,20 +137,28 @@ public class FragmentParcelasTabsPager extends SherlockFragmentActivity {
 	      		Intent intent = new Intent(getApplicationContext(), FragmentArvores.class);
 	        	startActivity(intent);
 	      		return true;
-	      	case R.id.mapType:	      		
-	      		if(mapDefault)
-		      		map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-	      		else
-		      		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-	      		
-	      		mapDefault = !mapDefault;
+	      	case R.id.mapType:
+	      		if(map != null){
+		      		if(mapDefault)
+			      		map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+		      		else
+			      		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+		      		
+		      		mapDefault = !mapDefault;
+	      		}else{
+	      			Toast.makeText(getApplicationContext(), "Opção desabilitada por falta de comunicação com GPS", Toast.LENGTH_SHORT).show();
+	      		}
 	      		return true;
 	      	case R.id.myLocation:
-	      		if(map.getMyLocation() != null){
-	      			Toast.makeText(getApplicationContext(), "Longitude: "+map.getMyLocation().getLongitude()+" | Latitude: "+map.getMyLocation().getLatitude() , Toast.LENGTH_SHORT).show();
-	      		}else{
-	      			Toast.makeText(getApplicationContext(), "Sua localização ainda não foi encontrada tente novamente em alguns segundos", Toast.LENGTH_SHORT).show();
-	      		}
+	      		if(map != null){
+		      		if(map.getMyLocation() != null){
+		      			Toast.makeText(getApplicationContext(), "Longitude: "+map.getMyLocation().getLongitude()+" | Latitude: "+map.getMyLocation().getLatitude() , Toast.LENGTH_SHORT).show();
+		      		}else{
+		      			Toast.makeText(getApplicationContext(), "Sua localização ainda não foi encontrada tente novamente em alguns segundos", Toast.LENGTH_SHORT).show();
+		      		}
+		 		}else{
+		  			Toast.makeText(getApplicationContext(), "Opção desabilitada por falta de comunicação com GPS", Toast.LENGTH_SHORT).show();
+		  		}
 	      		return true;
 	   }
 	   return super.onOptionsItemSelected(item);

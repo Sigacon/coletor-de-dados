@@ -23,6 +23,8 @@ import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+import br.com.sigacon.coletaDados.FragmentEstratos.EstratosFragment;
 import br.com.sigacon.dashboard.MainActivity;
 import br.com.sigacon.sgcativosflorestais.R;
 
@@ -31,6 +33,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.google.android.gms.maps.GoogleMap;
 
 /**
  * Demonstration of using fragments to implement different activity layouts.
@@ -57,6 +60,13 @@ public class FragmentArvoresRateadas extends SherlockFragmentActivity {
 	         NavUtils.navigateUpTo(this,
 	               new Intent(this, MainActivity.class));
 	         return true;
+	      	case R.id.action_finish:
+	      		Intent intent = new Intent(getApplicationContext(), FragmentEstratos.class);
+	        	startActivity(intent);
+	      		return true;
+	      	case R.id.action_save:
+      			Toast.makeText(getApplicationContext(), "Salvar", Toast.LENGTH_SHORT).show();	
+	      		return true;
 	   }
 	   return super.onOptionsItemSelected(item);
 	}
