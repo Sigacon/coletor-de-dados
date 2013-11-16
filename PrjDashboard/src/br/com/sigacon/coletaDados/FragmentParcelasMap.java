@@ -38,6 +38,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -115,24 +116,24 @@ public class FragmentParcelasMap extends SherlockFragmentActivity {
          * instance number.
          */
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         	
             View v = inflater.inflate(R.layout.fragment_map_parcelas, container, false);
             
             map = ((SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.mapParcelas)).getMap();
-
-            frameworkSystemLocation = new LatLng(-24.112151,-49.31387);
-            map.setMyLocationEnabled(true);
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(frameworkSystemLocation, 18));
-            map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-            map.addMarker(new MarkerOptions()
-                    .title("Parcela")
-                    .snippet("Possição: -24.112151,-49.31387")
-                    .position(frameworkSystemLocation));
             
+            if(map!=null)
+            {
+	            frameworkSystemLocation = new LatLng(-24.112151,-49.31387);
+	            map.setMyLocationEnabled(true);
+	            map.moveCamera(CameraUpdateFactory.newLatLngZoom(frameworkSystemLocation, 18));
+	            map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+	            map.addMarker(new MarkerOptions()
+	                    .title("Parcela")
+	                    .snippet("Possição: -24.112151,-49.31387")
+	                    .position(frameworkSystemLocation));
+            }
             return v;
         }
-        
     }
 }
